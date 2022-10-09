@@ -14,11 +14,9 @@ namespace TestQuest.Models
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Варіант відповіді")]
         public string AnswerText { get; set; }
 
         [Required]
-        [Display(Name = "Білет")]
         public int QuestionId { get; set; }
 
         // навігаційні властивості

@@ -27,6 +27,6 @@ namespace TestQuest.Models
         [ForeignKey("SubjectId")]
         public virtual Subject Subject { get; set; }
 
-        public virtual List<Question> TaskItems { get; set; }
+        public virtual List<Question> Questions { get; set; }
     }
 }

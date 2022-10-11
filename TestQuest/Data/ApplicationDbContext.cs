@@ -18,6 +18,7 @@ namespace TestQuest.Data
         public DbSet<Question> Questions { get; set; }
         public DbSet<Test> Tests { get; set; }
         public DbSet<Subject> Subjects { get; set; }
+        public DbSet<TestItem> TestItem { get; set; }
 
     }
 }

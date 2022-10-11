@@ -8,28 +8,26 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TestQuest.Models
 {
-    public class Question
+    public class TestItem
     {
         [Required]
         public int Id { get; set; }
+
         [Required]
-        [Display(Name = "Тест")]
+        [Display(Name = "Студент")]
+        public string UserId { get; set; }
+
+        [Required]
+        [Display(Name = "Екзамен")]
         public int TestId { get; set; }
-        [Required]
-        [Display(Name = "Питання")]
-        public string QuestionText { get; set; }
 
-        [Required]
-        [Display(Name = "Вірна відповідь")]
-        public int RightAnserNumber { get; set; }
-
-        // Вірна відповідь - 10 балів
+        public int Score { get; set; }
 
         // навігаційні властивості
+        [ForeignKey("UserId")]
+        public virtual AppUser AppUser { get; set; }
 
         [ForeignKey("TestId")]
         public virtual Test Test { get; set; }
-        public virtual List<Answer> Answers { get; set; }
-
     }
 }

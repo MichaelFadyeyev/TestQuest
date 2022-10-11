@@ -13,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                Тема
+                Предмет
             </th>
             <th>
-                Предмет
+                Тема
             </th>
             <th></th>
         </tr>
@@ -25,10 +25,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Theme)
+                @Html.DisplayFor(modelItem => item.Subject.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Subject.Title)
+                @Html.DisplayFor(modelItem => item.Theme)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Редагувати</a> |

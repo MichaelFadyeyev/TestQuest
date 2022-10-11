@@ -12,5 +12,13 @@ namespace TestQuest.Data
     public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+
+        public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Test> Tests { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<TestItem> TestItem { get; set; }
+
     }
 }

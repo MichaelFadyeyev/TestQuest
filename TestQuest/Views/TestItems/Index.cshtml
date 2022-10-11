@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TestQuest.Models.TestItem>
+
+@{
+    ViewData["Title"] = "Іспити";
+}
+
+<h4>@User.Identity.Name</h4>
+<h1>Пройдені іспити</h1>
+
+<p>
+    <a asp-action="Create">Пройти іспит</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Предмет
+            </th>
+            <th>
+                Екзамен
+            </th>
+            <th>
+                Балл
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test.Subject.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test.Theme)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<h5>Загальний бал: </h5>

@@ -1,0 +1,49 @@
+﻿@model TestQuest.Models.Test
+
+@{
+    ViewData["Title"] = "Додати іспит";
+}
+
+<h1>Додати іспит</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Theme" class="control-label"></label>
+                <input asp-for="Theme" class="form-control" />
+                <span asp-validation-for="Theme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubjectId" class="control-label"></label>
+                <select asp-for="SubjectId" class="form-control" asp-items="ViewBag.SubjectId"></select>
+            </div>
+            <div>
+                <a asp-controller="Questions" asp-action="Create">Білети</a>
+                <dl class="row">
+                    <dt class="col-sm-10">
+                        Кількисть білетів
+                    </dt>
+                    <dd class="col-sm-2">
+                        0
+                    </dd>
+                </dl>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Додати" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Повернутися до списку іспитів</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

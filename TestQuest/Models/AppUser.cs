@@ -9,11 +9,8 @@ using Microsoft.AspNetCore.Identity;
 namespace TestQuest.Models
 {
     public class AppUser : IdentityUser
-    {
-
+    {      
         // навігаційні властивості
-        public virtual List<Test> Tests { get; set; }
-
-
+        public virtual List<TestItem> TestItems { get; set; }
     }
 }
